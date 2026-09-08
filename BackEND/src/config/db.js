@@ -1,50 +1,19 @@
-import dotenv from "dotenv";
-dotenv.config();
-import express from "express";
-import cors from "cors";
-import notesroute from "./routes/notesroute.js";
-import airoute from "./routes/ai.routes.js";
-import { connectDB } from "./config/db.js";
-import rateLimiter from "./middlewares/rateLimiter.js";
+import mongoose from "mongoose";
+import dns from "dns";
 
-const app = express();
-const port = process.env.PORT || 8080;
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
-app.use(cors());
-app.use(express.json());
+let isConnected = false;
 
-// Must run BEFORE any route that touches the database.
-app.use(async (req, res, next) => {
+export const connectDB = async () => {
+  if (isConnected) return;
+
   try {
-    await connectDB();
-    next();
+    await mongoose.connect(process.env.MONGO_URL);
+    isConnected = true;
+    console.log("MONGODB connected Successfully");
   } catch (error) {
-    res.status(500).json({ message: "Database connection failed" });
+    console.error("Error connecting to MongoDB", error);
+    throw error;
   }
-});
-
-app.use(rateLimiter);
-
-app.use("/api/notes", notesroute);
-app.use("/api/ai", airoute);
-
-app.get("/", (req, res) => {
-  res.send("Notes API is running.");
-});
-
-app.use((req, res) => {
-  res.status(404).json({ message: "Route not found" });
-});
-
-app.use((err, req, res, next) => {
-  console.error("Unhandled error:", err);
-  res.status(500).json({ message: "Internal server error" });
-});
-
-if (!process.env.VERCEL) {
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
-}
-
-export default app;
+};
