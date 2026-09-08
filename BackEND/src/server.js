@@ -72,7 +72,14 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Internal server error" });
 });
 
-connectDB();
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    res.status(500).json({ message: "Database connection failed" });
+  }
+});
 
 // Only bind to a port when running locally — on Vercel, the exported
 // app itself is used directly as the serverless function handler.
