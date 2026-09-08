@@ -2,8 +2,7 @@
 
 A full-stack MERN notes application with built-in AI features: spelling correction, note summarization, and automatic title generation.
 
-**Live demo:** [Frontend](#) · [Backend API](#) &nbsp;*(add your live Vercel URLs here)*
-
+**Live demo:**https://memosy-da8f.vercel.app/(#) https://memosy.vercel.app/(#) &nbsp;
 ---
 
 ## Features
@@ -126,10 +125,10 @@ Runs on `http://localhost:5173`.
 
 ## Deployment Notes
 
-Both apps are deployed on [Vercel](https://vercel.com). The backend runs as a Vercel serverless function (see `BackEND/api/index.js` and `vercel.json`). Since MongoDB Atlas doesn't allow static IP whitelisting for serverless platforms, Network Access is set to allow all IPs (`0.0.0.0/0`) — this makes the database password the primary line of defense, so it's kept out of version control via `.gitignore`.
+Both apps are deployed on (https://vercel.com). The backend runs as a Vercel serverless function (see `BackEND/api/index.js` and `vercel.json`). Since MongoDB Atlas doesn't allow static IP whitelisting for serverless platforms, Network Access is set to allow all IPs (`0.0.0.0/0`) — this makes the database password the primary line of defense, so it's kept out of version control via `.gitignore`.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License — see the (LICENSE) file for details.
