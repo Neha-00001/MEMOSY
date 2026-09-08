@@ -1,4 +1,4 @@
-# 📝 Memosy — AI-Powered Notes App
+#  Memosy — AI-Powered Notes App
 
 A full-stack MERN notes application with built-in AI features: spelling correction, note summarization, and automatic title generation.
 
@@ -7,13 +7,13 @@ A full-stack MERN notes application with built-in AI features: spelling correcti
 
 ## Features
 
-- ✏️ Create, read, update, and delete notes
-- 🤖 **AI Fix Spelling** — corrects grammar/spelling in note content on demand
-- 📄 **AI Summarize** — generates a short summary of longer notes
-- ✨ **Auto Title Generation** — suggests a title based on content if you leave it blank
-- 🔎 Search notes by title or content (backend-ready)
-- 🛡️ Rate limiting via Upstash Redis (100 requests / 60s)
-- 📱 Responsive design, mobile-friendly
+-  Create, read, update, and delete notes
+-  **AI Fix Spelling** — corrects grammar/spelling in note content on demand
+- **AI Summarize** — generates a short summary of longer notes
+- **Auto Title Generation** — suggests a title based on content if you leave it blank
+-  Search notes by title or content (backend-ready)
+-  Rate limiting via Upstash Redis (100 requests / 60s)
+-  Responsive design, mobile-friendly
 
 ---
 
