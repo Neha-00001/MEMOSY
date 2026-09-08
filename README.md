@@ -2,7 +2,7 @@
 
 A full-stack MERN notes application with built-in AI features: spelling correction, note summarization, and automatic title generation.
 
-**Live demo:**https://memosy-da8f.vercel.app/(#) https://memosy.vercel.app/(#) &nbsp;
+**Live demo:**https://memosy-da8f.vercel.app/ https://memosy.vercel.app/ &nbsp;
 ---
 
 ## Features
