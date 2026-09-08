@@ -21,7 +21,7 @@ const NoteCard = ({ note, onDelete }) => {
         </h3>
         <button
           onClick={(e) => onDelete(e, note._id)}
-          className="text-slate-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+         className="text-slate-400 hover:text-red-500 transition-colors opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
           aria-label="Delete note"
         >
           <Trash2 className="w-4 h-4" />
